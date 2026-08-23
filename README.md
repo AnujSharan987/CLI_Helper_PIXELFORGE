@@ -1,6 +1,3 @@
-# CLI_Helper_PIXELFORGE
-This is a CLI tool which allows you to use AI in terminal to edit your code and fix errors without using browser.
-
 # ⚡ GemTerm
 
 > An ultra-fast, AI-powered developer CLI to debug, generate, and fix code without ever leaving your terminal.
@@ -28,9 +25,46 @@ GemTerm bridges the gap between your command-line workflow and the intelligence 
 
 ### Option 2: Run with Python
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/AnujSharan987/CLI_Helper_PIXELFORGE](https://github.com/AnujSharan987/CLI_Helper_PIXELFORGE)
-   cd YOUR_REPO
+1. Clone the repository:
+   git clone https://github.com/AnujSharan987/CLI_Helper_PIXELFORGE.git
+   cd CLI_Helper_PIXELFORGE
 
-[View Source on GitHub](https://github.com/AnujSharan987/CLI_Helper_PIXELFORGE.git).
+2. Install dependencies:
+   pip install google-genai rich pyinstaller
+
+3. Set API Key:
+   # PowerShell
+   $env:GEMINI_API_KEY="your_api_key_here"
+
+   # Linux / macOS
+   export GEMINI_API_KEY="your_api_key_here"
+
+*(Note: If not set as an environment variable, GemTerm will prompt you for it directly upon execution).*
+
+---
+
+## 💻 Usage & Commands
+
+### 1. Fix Bugs in an Existing File
+Point GemTerm to any existing code file with your prompt:
+
+python gemterm.py buggy_code.py "find why this crashes and fix it"
+
+GemTerm inspects your file, explains the issue, displays the corrected code, and prompts:
+Save updated code to buggy_code_corrected.py? (y/n): y
+
+### 2. Generate a Brand New Script
+Specify a target filename that does not exist yet:
+
+python gemterm.py snake_game.py "create a complete playable snake game using pygame"
+
+### 3. Using with the Standalone Binary (.exe)
+If you downloaded `gemterm.exe` and added it to your system PATH:
+
+gemterm script.py "refactor this function for better time complexity"
+
+---
+
+## 📄 License
+
+This project is open-source under the [MIT License](LICENSE).
